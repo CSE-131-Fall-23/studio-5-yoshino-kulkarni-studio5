@@ -1,5 +1,7 @@
 package studio5;
 
+import java.util.Arrays;
+
 import edu.princeton.cs.introcs.StdDraw;
 
 public class Methods {
@@ -16,7 +18,7 @@ public class Methods {
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
-		
+		distance = Math.sqrt((x2-x1) * (x2 -x1) + (y2-y1) * (y2-y1));
 		return distance;
 	}
 
@@ -35,17 +37,18 @@ public class Methods {
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
 
-		
-
+		StdDraw.setPenColor(StdDraw.BLUE);
+		StdDraw.filledCircle(x, y, radius*(.75));
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
-
+		StdDraw.setPenColor(StdDraw.RED);
+		StdDraw.filledCircle(x, y, radius*(1/2.0));
 		
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
-
-		
+		StdDraw.setPenColor(StdDraw.YELLOW);
+		StdDraw.filledCircle(x, y, radius*(1/4.0));
 	}
 
 	/**
@@ -60,10 +63,25 @@ public class Methods {
 	 *         characters in the source String with the replacement String
 	 */
 	public static String substituteAll(String source, char target, String replacement) {
-		String result = "";
-		// TODO: Finish this method
+		//String[] result = new String[charArray.length];
 		
-		return result;
+		char[] charArray = source.toCharArray();
+		String[] result = new String[charArray.length];
+		char[] rep = replacement.toCharArray();
+	
+		for (int i = 0; i < charArray.length; i++)
+		{
+			if (charArray[i] == target);
+			{
+				
+				result[i] = replacement;
+				
+			}
+		}
+		return Arrays.toString(result);
+//		result = charArray.toString();
+		
+		
 	}
 
 	/**
